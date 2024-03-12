@@ -34,10 +34,12 @@
     <section class="q-mt-lg">
       <h6 class="q-my-none">Additional data</h6>
 
-      <code>
-        <pre>User agent: {{ userAgent }}</pre>
-        <pre>Is Instagram: {{ userAgentIsInstagram }}</pre>
-      </code>
+      <q-card>
+        <q-card-section>
+          <p class="text-overline">User agent: {{ userAgent }}</p>
+          <p class="text-overline">Is Instagram: {{ userAgentIsInstagram }}</p>
+        </q-card-section>
+      </q-card>
     </section>
   </q-page>
 </template>
