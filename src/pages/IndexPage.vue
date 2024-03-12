@@ -40,9 +40,18 @@ const installPWA = async () => {
   >
     <p>
       Is installable:
-      <q-chip color="dark" text-color="white">{{ isInstallable }}</q-chip>
+      <q-chip
+        :color="isInstallable ? 'positive' : 'negative'"
+        text-color="white"
+        >{{ isInstallable }}</q-chip
+      >
     </p>
 
-    <q-btn color="dark" unelevated @click="installPWA">Install App</q-btn>
+    <q-btn
+      :color="isInstallable ? 'positive' : 'negative'"
+      unelevated
+      @click="installPWA"
+      >Install App</q-btn
+    >
   </section>
 </template>
