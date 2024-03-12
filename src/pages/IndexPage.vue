@@ -3,13 +3,13 @@
     <div class="column q-gutter-y-lg">
       <q-btn outlined to="/another">Vue router go to other</q-btn>
       <q-btn color="primary" @click="goToExternalLink('/another')"
-        >External (window.replace)</q-btn
+        >External [window.replace]</q-btn
       >
       <q-btn color="positive" @click="goToExternalLink('/another', true)"
-        >External new tab (window.open)</q-btn
+        >External new tab [window.open(link, '__blank')]</q-btn
       >
       <q-btn color="negative" @click="attemptToTriggerSystemBrowser('/another')"
-        >External new tab (window.open(link, '_system'))</q-btn
+        >External new tab [window.open(link, '_system')]</q-btn
       >
     </div>
   </q-page>
