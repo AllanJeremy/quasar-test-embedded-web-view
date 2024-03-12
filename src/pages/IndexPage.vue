@@ -35,7 +35,14 @@ const installPWA = async () => {
 </script>
 
 <template>
-  <section class="q-pa-lg">
-    <q-btn v-if="isInstallable" @click="installPWA">Install App</q-btn>
+  <section
+    class="full-width window-height bg-yellow-2 flex column justify-evenly items-center"
+  >
+    <p>
+      Is installable:
+      <q-chip color="dark" text-color="white">{{ isInstallable }}</q-chip>
+    </p>
+
+    <q-btn color="dark" unelevated @click="installPWA">Install App</q-btn>
   </section>
 </template>
