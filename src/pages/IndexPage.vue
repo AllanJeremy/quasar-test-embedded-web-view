@@ -1,20 +1,21 @@
 <!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 
 // This will hold the event we need to trigger the install prompt
 const deferredPrompt = ref<Event | null>(null);
 const isInstallable = ref(false);
 
-onMounted(() => {
-  window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent the mini-infobar from appearing on mobile
-    e.preventDefault();
-    // Save the event so it can be triggered later.
-    deferredPrompt.value = e;
-    // Update UI to notify the user they can install the PWA
-    isInstallable.value = true;
-  });
+// onMounted(() => {});
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  alert('registering before install prompt');
+  // Prevent the mini-infobar from appearing on mobile
+  e.preventDefault();
+  // Save the event so it can be triggered later.
+  deferredPrompt.value = e;
+  // Update UI to notify the user they can install the PWA
+  isInstallable.value = true;
 });
 
 const installPWA = async () => {
@@ -47,6 +48,9 @@ const installPWA = async () => {
       >
     </p>
 
+    <p class="text-overline">
+      {{ deferredPrompt }}
+    </p>
     <q-btn
       :color="isInstallable ? 'positive' : 'negative'"
       unelevated
